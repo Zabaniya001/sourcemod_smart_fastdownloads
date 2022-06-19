@@ -22,6 +22,15 @@ jobs:
           version: "1.10.x"
           version-file: ./scripting/smart_fastdownloads.sp
 
+      - name: Download dependencies
+        run: |
+          mkdir scripting/include
+          cd scripting/include
+          
+          wget "https://raw.githubusercontent.com/accelerator74/SxGeo/master/Release/sxgeo.inc"
+          
+          cd ../..
+
       - name: Compile plugins
         run: |
           mkdir plugins
